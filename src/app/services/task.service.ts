@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 const httpOptions = {
 headers: new HttpHeaders({
   'Content-Type': 'application/json',
+
 })
 }
 
@@ -31,5 +32,7 @@ private apiUrl = "http://localhost:5000/tasks"
     const url = `${this.apiUrl}/${task.id}`
       return this.http.put<Task>(url, task, httpOptions);
   }
+  createTask(task: Task):Observable<Task>{
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
+  }
 }
- 
