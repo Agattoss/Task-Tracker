@@ -1,4 +1,5 @@
 <form 
+*ngIf="showAddTask"
 class="add-form"
 (ngSubmit)="onSubmit()">
     <div class="form-control">
@@ -20,7 +21,8 @@ class="add-form"
          [(ngModel)]="date">
     </div>
     <div class="form-control form-control-check">
-        <label for="reminder">Set Reminder</label>
+        <label for="reminder" 
+        style="color:#49beaa">Set Reminder</label>
         <input 
         type="checkbox" 
         name="reminder" 
